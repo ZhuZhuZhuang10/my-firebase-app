@@ -1,5 +1,5 @@
 import requests
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def proxy(path):
         # Создаем ответ для клиента
         return (resp.content, resp.status_code, dict(resp.headers))
     except Exception as e:
-        return str(e), 500
+        return jsonify(error=str(e)), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
