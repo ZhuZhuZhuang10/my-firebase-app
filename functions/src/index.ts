@@ -1,5 +1,5 @@
 import * as functions from 'firebase-functions';
-import nodeFetch from 'node-fetch';
+import fetch from 'node-fetch';
 
 export const handleRequest = functions.https.onRequest(async (req: functions.Request, res: functions.Response) => {
   try {
@@ -9,7 +9,7 @@ export const handleRequest = functions.https.onRequest(async (req: functions.Req
     url.port = '11111'; // Укажите порт вашего V2Ray сервера
 
     let upstream = new URL(url.toString());
-    let response = await nodeFetch(upstream.toString(), {
+    let response = await fetch(upstream.toString(), {
       method: req.method,
       headers: req.headers as any,
       body: req.method === 'POST' ? (req as any).body : undefined
