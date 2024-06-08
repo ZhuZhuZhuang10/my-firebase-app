@@ -5,6 +5,13 @@
     "firebase-admin": "^9.8.0",
     "node-fetch": "^2.6.1"
   },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "build": "tsc",  // Добавьте этот скрипт, если используете TypeScript
+    "start": "firebase emulators:start --only functions"
+  },
   "engines": {
     "node": "14"
   }
