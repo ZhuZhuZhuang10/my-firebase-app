@@ -1,10 +1,13 @@
 {
-  "name": "firebase-function",
-  "version": "0.0.1",
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "main": "index.js",
   "dependencies": {
-    "firebase-functions": "^3.14.1"
+    "firebase-functions": "^3.13.2",
+    "firebase-admin": "^9.8.0",
+    "node-fetch": "^2.6.1"
   },
-  "scripts": {
-    "deploy": "firebase deploy --only functions"
+  "engines": {
+    "node": "14"
   }
 }
