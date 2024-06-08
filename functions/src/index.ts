@@ -1,23 +1,23 @@
-const functions = require('firebase-functions');
-const fetch = require('node-fetch');
+import * as functions from 'firebase-functions';
+import nodeFetch from 'node-fetch';
 
-exports.handleRequest = functions.https.onRequest(async (req, res) => {
+export const handleRequest = functions.https.onRequest(async (req: functions.Request, res: functions.Response) => {
   try {
     let url = new URL(req.url);
     url.protocol = 'http';
-    url.hostname = 'test.com'; // Замените на ваш домен V2Ray сервера
+    url.hostname = 'rue2.dry-ghd.top'; // Замените на ваш домен V2Ray сервера
     url.port = '11111'; // Укажите порт вашего V2Ray сервера
 
-    let upstream = new URL(url);
-    let response = await fetch(upstream, {
+    let upstream = new URL(url.toString());
+    let response = await nodeFetch(upstream.toString(), {
       method: req.method,
-      headers: req.headers,
-      body: req.method === 'POST' ? req.body : undefined
+      headers: req.headers as any,
+      body: req.method === 'POST' ? (req as any).body : undefined
     });
 
     const responseBody = await response.text();
     res.status(response.status).send(responseBody);
   } catch (error) {
-    res.status(500).send(error.toString());
+    res.status(500).send((error as Error).toString());
   }
 });
