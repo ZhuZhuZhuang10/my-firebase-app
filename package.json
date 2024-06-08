@@ -2,9 +2,9 @@
   "name": "my-proxy-function",
   "version": "1.0.0",
   "description": "Proxy function for V2Ray server",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "axios": "^0.24.0",
