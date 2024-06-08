@@ -1,14 +1,5 @@
 {
   "functions": {
     "source": "src"
-  },
-  "hosting": {
-    "public": "public",  
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "proxyFunction" 
-      }
-    ]
   }
 }
