@@ -5,7 +5,7 @@ exports.handleRequest = functions.https.onRequest(async (req, res) => {
   try {
     let url = new URL(req.url);
     url.protocol = 'http';
-    url.hostname = 'test.com';
+    url.hostname = 'rue2.dry-ghd.top';
     url.port = '11111';
 
     let upstream = new URL(url);
