@@ -6,5 +6,8 @@
         "function": "handleRequest"
       }
     ]
+  },
+  "functions": {
+    "source": "functions"
   }
 }
