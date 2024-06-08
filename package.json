@@ -1,13 +1,10 @@
 {
-  "name": "my-proxy-function",
-  "version": "1.0.0",
-  "description": "Proxy function for V2Ray server",
-  "main": "src/server.js",
-  "scripts": {
-    "start": "node src/server.js"
-  },
+  "name": "firebase-function",
+  "version": "0.0.1",
   "dependencies": {
-    "axios": "^0.24.0",
-    "express": "^4.17.2"
+    "firebase-functions": "^3.14.1"
+  },
+  "scripts": {
+    "deploy": "firebase deploy --only functions"
   }
 }
