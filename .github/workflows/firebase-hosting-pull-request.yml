@@ -22,3 +22,4 @@ jobs:
           firebase-project-id: ${{ secrets.FIREBASE_PROJECT_ID }}
           hosting-config: firebase.json
           dir: .
+          entry-point: functions/handleRequest.js
