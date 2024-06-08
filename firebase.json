@@ -1,5 +1,12 @@
 {
   "functions": {
     "source": "src"
+  },
+  "hosting": {
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
   }
 }
